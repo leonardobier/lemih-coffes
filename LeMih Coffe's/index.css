@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
+body {
+  background-color: #fcfcf7;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* HEADER AJUSTADO E CENTRALIZADO */
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  background-color: #9e6200;
+  margin: 0;
+  position: relative;
+}
+
+.logo {
+  margin-left: 1rem;
+}
+
+.logo img {
+  height: 120px;
+  width: auto;
+  display: block;
+}
+
+.title h1 {
+  margin: 0;
+}
+
+/* OCULTAR O CHECKBOX E O ÍCONE HAMBÚRGUER EM DESKTOP */
+.menu-toggle,
+.hamburger {
+  display: none;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  grid-column: 2;
+  font-family: "Arial", sans-serif;
+}
+
+.nav button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #9e6200;
+  color: #ecdcab;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.nav button:hover {
+  background-color: #ecdcab;
+  color: #9e6200;
+}
+
+button a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.contact {
+  grid-column: 3;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-self: end;
+  font-family: "Arial", sans-serif;
+  margin-right: 1rem;
+}
+
+.contact a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 4px;
+  background-color: #9e6200;
+  color: #ecdcab;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.contact a:hover {
+  background-color: #ecdcab;
+  color: #9e6200;
+}
+
+/* ÁREA DE CONTEÚDO */
+.container {
+  max-width: 1100px;
+  margin: 0.5rem auto;
+  padding: 0 1rem;
+  text-align: center;
+  flex: 1;
+}
+
+.container h1 {
+  color: #9e6200;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  font-family: "Dancing Script", cursive;
+  font-weight: 400;
+}
+
+/* GRID DOS CARDS DE CAFÉ, CROISSANT E SANDUÍCHE */
+.menu-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 1rem;
+  width: 280px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.card h3 {
+  color: #9e6200;
+  margin: 0.5rem 0;
+  font-size: 1.3rem;
+}
+
+.card p {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+  line-height: 1.4;
+}
+
+.card .price {
+  font-weight: bold;
+  color: #9e6200;
+  font-size: 1.2rem;
+  margin-top: auto;
+}
+
+/* FOOTER FIXADO EMBAIXO */
+footer {
+  background-color: #9e6200;
+  color: #ecdcab;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+/* RESPONSIVIDADE PARA TELAS MENORES (MOBILE) */
+@media (max-width: 768px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+  }
+
+  .logo img {
+    height: 80px;
+  }
+
+  /* EXIBIR O BOTÃO HAMBÚRGUER */
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #ecdcab;
+    cursor: pointer;
+    order: 2;
+  }
+
+  /* ESCONDER O NAV PADRÃO */
+  .nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #9e6200;
+    padding: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    z-index: 10;
+  }
+
+  .nav button {
+    width: 80%;
+    margin: 0.3rem 0;
+  }
+
+  /* MOSTRAR O NAV QUANDO O CHECKBOX ESTIVER MARCADOR (CLICADO) */
+  .menu-toggle:checked ~ .nav {
+    display: flex;
+  }
+
+  .contact {
+    display: none; /* Ocultado no topo mobile para priorizar o menu, ou ajuste conforme preferir */
+  }
+
+  .container {
+    margin: 0.5rem 0;
+    padding: 0 1rem;
+  }
+
+  .container h1 {
+    font-size: 2.2rem;
+  }
+
+  .menu-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .card img {
+    height: 180px;
+  }
+}
